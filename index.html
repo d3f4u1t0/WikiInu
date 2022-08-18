@@ -1,0 +1,92 @@
+<!-- https://codepen.io/xaca/pen/yLNyNyy -->
+<!-- xacarana.com/cursos/html_y_css -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/main.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <title></title>
+  <style type="text/css">
+    body{
+      margin:  0;
+      padding:  0;
+    }
+    .seccion{
+      width: 370px;
+      height: 440px;
+      border:  1px solid black;
+    }
+    .ocultar{
+      display: none;
+    }
+    #seccion_1{
+      background: lightcyan;
+    }
+    #seccion_2{
+      background: lightgoldenrodyellow;
+    }
+    #seccion_3{
+      background: lightcoral;
+    }
+    #seccion_4{
+      background: lightsteelblue;
+    }
+    #seccion_5{
+      background: rgb(51, 114, 196);
+    }
+    #seccion_6{
+      background: rgb(160, 181, 209);
+    }
+    #seccion_7{
+      background: rgb(69, 231, 223);
+    }
+
+
+  </style>
+  <meta name="theme-color" content="#fafafa">
+  <script type="text/javascript">
+    let seccion_actual;
+
+    function ocultar()
+    {
+      let secciones = document.getElementsByClassName("seccion");
+      for(var i=0;i<secciones.length;i++){
+        secciones[i].classList.add("ocultar");
+      }
+
+    }
+
+    function cambiarSeccion(id)
+    {
+      let seccion = document.getElementById("seccion_"+id);
+      ocultar();
+      seccion.classList.remove("ocultar");
+    }
+  </script>
+</head>
+
+<body>      
+  <nav>
+    <input type="button" value="Splash" onclick="cambiarSeccion(1);">
+    <input type="button" value="Register" onclick="cambiarSeccion(2);">
+    <input type="button" value="Login" onclick="cambiarSeccion(3);">
+    <input type="button" value="Home" onclick="cambiarSeccion(4);">
+    <input type="button" value="Info" onclick="cambiarSeccion(5);">
+    <input type="button" value="Photo1" onclick="cambiarSeccion(6);">
+    <input type="button" value="Photo2" onclick="cambiarSeccion(7);">
+  </nav> 
+
+  <section class="seccion ocultar" id="seccion_1"></section>
+  <section class="seccion" id="seccion_2"></section>
+  <section class="seccion ocultar" id="seccion_3"></section>
+  <section class="seccion ocultar" id="seccion_4"></section>
+  <section class="seccion ocultar" id="seccion_5"></section>
+  <section class="seccion ocultar" id="seccion_6"></section>
+  <section class="seccion ocultar" id="seccion_7"></section>
+
+</body>
+
+</html>
