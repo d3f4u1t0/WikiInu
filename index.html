@@ -1,5 +1,3 @@
-<!-- https://codepen.io/xaca/pen/yLNyNyy -->
-<!-- xacarana.com/cursos/html_y_css -->
 <!doctype html>
 <html lang="en">
 
@@ -7,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/main.js"></script>
-  <link rel="stylesheet" href="css/main.css">
-  <title></title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <title></title>
   <style type="text/css">
     body{
       margin:  0;
@@ -16,35 +14,18 @@
     }
     .seccion{
       width: 370px;
-      height: 440px;
+      height: 540px;
       border:  1px solid black;
     }
     .ocultar{
       display: none;
     }
     #seccion_1{
-      background: lightcyan;
-    }
-    #seccion_2{
-      background: lightgoldenrodyellow;
-    }
-    #seccion_3{
-      background: lightcoral;
-    }
-    #seccion_4{
-      background: lightsteelblue;
-    }
-    #seccion_5{
       background: rgb(51, 114, 196);
     }
-    #seccion_6{
-      background: rgb(160, 181, 209);
+    #seccion_2{
+      background: rgb(51, 114, 196);
     }
-    #seccion_7{
-      background: rgb(69, 231, 223);
-    }
-
-
   </style>
   <meta name="theme-color" content="#fafafa">
   <script type="text/javascript">
@@ -65,28 +46,145 @@
       ocultar();
       seccion.classList.remove("ocultar");
     }
+
+    function store(){
+      var name = document.getElementById('nombre');
+      var pw = document.getElementById('clave2');
+      var pw2 = document.getElementById('clave1');
+      
+      if(name.value.length == 0){
+        alert('El campo nombre de usuario es requerido');
+      }
+      else if(pw.value.length == 0){
+        alert('El campo contraseña es requerido');
+      }
+        else if(name.value.length == 0 && pw.value.length == 0){
+          alert('Please fill in email and password');
+        }
+        else if(pw.value.length > 8){
+          alert('La contraseña debe ser de maximo 8 caracteres');
+        }
+        else if (pw.value !== pw2.value)
+        {
+          alert('Las contraseñas no coinciden');
+        }
+        else{
+          localStorage.setItem('name', name.value);
+          localStorage.setItem('pw', pw.value);
+          alert('Tu cuenta ha sido creada');
+          cambiarSeccion(2);
+        }
+    }
+
+    function check(){
+      var storedName = localStorage.getItem('name');
+      var storedPw = localStorage.getItem('pw');
+
+      var userName = document.getElementById('nombreUsuario');
+      var userPw = document.getElementById('claveUsuario');
+
+      if(userName.value == storedName && userPw.value == storedPw){
+        alert('Inicio de sesión realizado correctamente');
+        cambiarSeccion(4);
+      }else{
+        alert('Error en login');
+      }
+}
   </script>
 </head>
 
 <body>      
-  <nav>
-    <input type="button" value="Splash" onclick="cambiarSeccion(1);">
-    <input type="button" value="Register" onclick="cambiarSeccion(2);">
-    <input type="button" value="Login" onclick="cambiarSeccion(3);">
-    <input type="button" value="Home" onclick="cambiarSeccion(4);">
-    <input type="button" value="Info" onclick="cambiarSeccion(5);">
-    <input type="button" value="Photo1" onclick="cambiarSeccion(6);">
-    <input type="button" value="Photo2" onclick="cambiarSeccion(7);">
-  </nav> 
-
-  <section class="seccion ocultar" id="seccion_1"></section>
-  <section class="seccion" id="seccion_2"></section>
-  <section class="seccion ocultar" id="seccion_3"></section>
+  <section class="seccion" id="seccion_1">
+    <div style="text-align: center  ; margin-top: 30%;">
+      <h2>GOOD VIABILITY</h2>
+        <img
+        src="./a-esta-falla-se-deben-problemas-en-servicio-de-waze-en-medell-n-1186654952212586498.jpg"
+        alt="..."
+        class="img-thumbnail center"
+        width="200px"  
+      >
+      <br/>
+      <button type="button" class="btn btn-primary" style="margin-top: 20px;" onclick="cambiarSeccion(2)">INICIAR SESIÓN</button>
+      <br/>
+      <button type="button" class="btn btn-secondary" style="margin-top: 10px;" onclick="cambiarSeccion(3)">REGISTRARSE</button>
+    </div> 
+  </section>
+  <section class="seccion ocultar" id="seccion_2">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">INICIAR</p>
+                  <form class="mx-1 mx-md-4" id="fomulario_registro">
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="nombreUsuario" class="form-control" />
+                        <label class="form-label" for="nombreUsuario">Nombre de usuario</label>
+                      </div>
+                      </div>
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="password" id="claveUsuario" class="form-control" />
+                          <label class="form-label" for="claveUsuario">Contraseña</label>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        <button type="button" class="btn btn-primary btn-lg" style="margin-right: 10px;" onclick="cambiarSeccion(1)">&laquo; Regresar</button>
+                        <button class="btn btn-primary btn-lg" onclick="check(); return false;">INICIAR</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+      </div>
+    </div>
+  </section>
+  <section class="seccion ocultar" id="seccion_3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">REGISTRO</p>
+                  <form class="mx-1 mx-md-4" id="fomulario_registro">
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="nombre" class="form-control" />
+                        <label class="form-label" for="nombre">Nombre de usuario</label>
+                      </div>
+                      </div>
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="password" id="clave1" class="form-control" />
+                          <label class="form-label" for="clave1">Contraseña</label>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="password" id="clave2" class="form-control" />
+                          <label class="form-label" for="clave2">Confirme su contraseña</label>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        <button type="button" class="btn btn-primary btn-lg" style="margin-right: 10px;" onclick="cambiarSeccion(1)">&laquo; Regresar</button>
+                        <button class="btn btn-primary btn-lg" onclick="store(); return false;">Guardar</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+      </div>
+    </div>
+  </section>
   <section class="seccion ocultar" id="seccion_4"></section>
   <section class="seccion ocultar" id="seccion_5"></section>
   <section class="seccion ocultar" id="seccion_6"></section>
   <section class="seccion ocultar" id="seccion_7"></section>
-
 </body>
-
 </html>
