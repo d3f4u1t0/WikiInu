@@ -76,6 +76,19 @@
         }
     }
 
+    function store2(){
+      var name = document.getElementById('nombre');
+      var raza = document.getElementById('raza');
+      var alimentacion = document.getElementById('alimentacion');
+      var cuidados = document.getElementById('cuidados');
+      localStorage.setItem('name', name.value);
+      localStorage.setItem('raza', raza.value);
+      localStorage.setItem('alimentacion', alimentacion.value);
+      localStorage.setItem('cuidados', cuidados.value);
+      alert('Tu mascota ha sido agregada');
+      cambiarSeccion(6);
+    }
+
     function check(){
       var storedName = localStorage.getItem('name');
       var storedPw = localStorage.getItem('pw');
@@ -182,9 +195,49 @@
       </div>
     </div>
   </section>
-  <section class="seccion ocultar" id="seccion_4"></section>
-  <section class="seccion ocultar" id="seccion_5"></section>
-  <section class="seccion ocultar" id="seccion_6"></section>
+  <section class="seccion ocultar" id="seccion_4">
+    <div>
+      <h1>WikiPet</h1>
+    </div>
+    <div>
+      <div style="border: 1px solid black; justify-content: center; display: flex; margin: 20px; height: 200px;">
+      </div>
+    </div>
+    <div><button type="button" class="btn btn-primary" style="margin-left: 10px; margin: 10px;" onclick="cambiarSeccion(5)">Agregar Mascota</button></div>
+    <div><button type="button" class="btn btn-primary" style="margin-right: 10px;" onclick="cambiarSeccion(3)">&laquo; Regresar</button></div>
+  </section>
+
+  <section class="seccion ocultar" id="seccion_5">
+    <div>
+      <h1>Formulario de Mascota</h1>
+      <label class="form-label" for="nombre">Nombre de Mascota</label>
+      <input type="text" id="nombre" class="form-control"/>
+      <br>
+      <label class="form-label" for="nombre">Raza</label>
+      <input type="text" id="raza" class="form-control" />
+      <br>
+      <label class="form-label" for="nombre">Alimentación</label>
+      <input type="text" id="alimentacion" class="form-control" />
+      <br>
+      <label class="form-label" for="nombre">Cuidados especiales</label>
+      <input type="text" id="cuidados" class="form-control" />
+    </div>
+    <div>
+      <button class="btn btn-primary" style="margin:15px;" onclick="store2(); return false;">Guardar</button>
+      <button type="button" class="btn btn-primary" style="margin-right: 10px;" onclick="cambiarSeccion(4)">&laquo; Regresar</button>
+    </div>
+  </section>
+  <section class="seccion ocultar" id="seccion_6">
+    <h1>Lista de Mascotas</h1>
+    <div>
+      <li>Firulais</li>
+      <li>Don Oscar</li>
+      <li>Arthur</li>
+      <li>Romeo</li>
+      <li>Simona</li>
+    </div>
+    <div><div><button type="button" class="btn btn-primary" style="margin-right: 10px;" onclick="cambiarSeccion(5)">&laquo; Regresar</button></div></div>
+  </section>
   <section class="seccion ocultar" id="seccion_7"></section>
 </body>
 </html>
