@@ -107,11 +107,10 @@
 </head>
 
 <body>      
-  <section class="seccion" id="seccion_1">
-    <div style="text-align: center  ; margin-top: 30%;">
-      <h2>GOOD VIABILITY</h2>
+  <section class="seccion" id="seccion_1" style="background-color: rgb(140, 189, 245) ;">
+    <div style="text-align: center  ; margin-top: 20%;">
         <img
-        src="./a-esta-falla-se-deben-problemas-en-servicio-de-waze-en-medell-n-1186654952212586498.jpg"
+        src="logo.jpg"
         alt="..."
         class="img-thumbnail center"
         width="200px"  
@@ -120,6 +119,10 @@
       <button type="button" class="btn btn-primary" style="margin-top: 20px;" onclick="cambiarSeccion(2)">INICIAR SESIÓN</button>
       <br/>
       <button type="button" class="btn btn-secondary" style="margin-top: 10px;" onclick="cambiarSeccion(3)">REGISTRARSE</button>
+      <br>
+      <br>
+      <br>
+      <button type="button" class="btn btn-info" style="margin-top: 30px;" onclick="cambiarSeccion(7)">Créditos WikiPet</button>
     </div> 
   </section>
   <section class="seccion ocultar" id="seccion_2">
@@ -155,7 +158,7 @@
       </div>
     </div>
   </section>
-  <section class="seccion ocultar" id="seccion_3">
+  <section class="seccion ocultar" id="seccion_3" style="background-color:rgb(106, 167, 238);">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-lg-12 col-xl-11">
@@ -197,18 +200,24 @@
   </section>
   <section class="seccion ocultar" id="seccion_4">
     <div>
-      <h1>WikiPet</h1>
+      <img src="logo.jpg" alt="..." style="justify-content: center; margin-top: 20px; margin-left: 130px;">
     </div>
     <div>
-      <div style="border: 1px solid black; justify-content: center; display: flex; margin: 20px; height: 200px;">
+      <div style="border: 1px solid black; justify-content: center; margin: 20px; height: 280px;">
+        <h3 style="text-align: center;">Ayuda práctica:</h3>
+        <br>
+        <p style="text-align:center; padding: 5px;">Al dar clic en el botón "Agregar Mascota", se solicitan los siguientes campos, por lo que es
+          necesario que los conozca con anterioridad: nombre de la mascota, raza, el tipo de alimentacion que recibe y 
+          los cuidados especiales que hay que tener en cuenta.
+        </p>
       </div>
     </div>
     <div><button type="button" class="btn btn-primary" style="margin-left: 10px; margin: 10px;" onclick="cambiarSeccion(5)">Agregar Mascota</button></div>
-    <div><button type="button" class="btn btn-primary" style="margin-right: 10px;" onclick="cambiarSeccion(3)">&laquo; Regresar</button></div>
+    <div><button type="button" class="btn btn-primary" style="margin-left: 10px;" onclick="cambiarSeccion(3)">&laquo; Regresar</button></div>
   </section>
 
-  <section class="seccion ocultar" id="seccion_5">
-    <div>
+  <section class="seccion ocultar" id="seccion_5" style="background-color: rgb(106, 167, 238);">
+    <div style="padding: 10px ;">
       <h1>Formulario de Mascota</h1>
       <label class="form-label" for="nombre">Nombre de Mascota</label>
       <input type="text" id="nombre" class="form-control"/>
@@ -227,17 +236,37 @@
       <button type="button" class="btn btn-primary" style="margin-right: 10px;" onclick="cambiarSeccion(4)">&laquo; Regresar</button>
     </div>
   </section>
-  <section class="seccion ocultar" id="seccion_6">
+  <section class="seccion ocultar" id="seccion_6" style="background-color: rgb (106, 167, 238); padding: 10px;">
     <h1>Lista de Mascotas</h1>
+    <br>
     <div>
       <li>Firulais</li>
       <li>Don Oscar</li>
       <li>Arthur</li>
       <li>Romeo</li>
       <li>Simona</li>
+      <li>Max</li>
     </div>
-    <div><div><button type="button" class="btn btn-primary" style="margin-right: 10px;" onclick="cambiarSeccion(5)">&laquo; Regresar</button></div></div>
+    <br>
+    <div><div><button type="button" class="btn btn-primary" style="margin-left: 10px;" onclick="cambiarSeccion(5)">&laquo; Regresar</button></div></div>
   </section>
-  <section class="seccion ocultar" id="seccion_7"></section>
+  <section class="seccion ocultar" id="seccion_7" style="background-color: rgb(106, 167, 238);">
+    <div style="padding: 20px;">
+      <H1>Estudiantes</H1>
+      <br>  
+      <p>Catalina Reyes Montoya <br>Correo: andrea.reyesm@upb.edu.co <br>
+        <br>
+        Brayan Osorio Zapata <br>Correo: brayan.osorio@upb.edu.co <br>
+        <br>
+        Daniela Hernández Chavarro <br>Correo: daniela.hernandezc@upb.edu.co</p>
+
+        <img src="logo.jpg"
+        alt="..."
+        class="img-thumbnail center"
+        width="200px">
+
+        <button type="button" class="btn btn-light" style="margin-right: 10px;" onclick="cambiarSeccion(1)">&laquo; Regresar</button>
+    </div>
+  </section>
 </body>
 </html>
