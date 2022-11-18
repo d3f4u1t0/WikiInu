@@ -1,0 +1,6 @@
+{
+  "appId": "com.wikiinu.app",
+  "appName": "WikiInu",
+  "webDir": "assets",
+  "bundledWebRuntime": false
+}

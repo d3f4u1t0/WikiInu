@@ -1,0 +1,33 @@
+body{
+    margin:  0;
+    padding:  0;
+  }
+  .seccion{
+    width: 412px;
+    height: 660px;
+    border:  1px solid black;
+  }
+  .ocultar{
+    display: none;
+  }
+  #seccion_1{
+    background: rgb(51, 114, 196);
+  }
+  #seccion_2{
+    background: rgb(51, 114, 196);
+  }
+  #seccion_3{
+    background: rgb(51, 114, 196);
+  }
+  #seccion_4{
+    background: rgb(51, 114, 196);
+  }
+  #seccion_5{
+    background: rgb(51, 114, 196);
+  }
+  #seccion_6{
+    background: rgb(51, 114, 196);
+  }
+  #seccion_7{
+    background: rgb(51, 114, 196);
+  }

@@ -1,0 +1,27 @@
+{
+  "name": "apps_moviles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d3f4u1t0/apps_moviles.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d3f4u1t0/apps_moviles/issues"
+  },
+  "homepage": "https://github.com/d3f4u1t0/apps_moviles#readme",
+  "dependencies": {
+    "@capacitor/android": "^4.5.0",
+    "@capacitor/core": "^4.5.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^4.5.0"
+  }
+}
